@@ -8,7 +8,10 @@ import (
 )
 
 func main() {
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		Prefork: true,
+	})
+
 	app.Use(logger.New())
 
 	setupRoutes(app)
