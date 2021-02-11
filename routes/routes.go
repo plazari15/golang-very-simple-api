@@ -8,10 +8,3 @@ import (
 func Register(app fiber.Router) {
 	app.Get("/", controllers.ExperimentalIndex)
 }
-
-func index(c *fiber.Ctx) error {
-	return c.Status(fiber.StatusOK).JSON(fiber.Map{
-		"success": true,
-		"message": "You are at the endpoint 😉",
-	})
-}
